@@ -1,8 +1,9 @@
+---
 name: module3_task0
 
-on:
+on:   # yamllint disable-line rule:truthy
   push:
-    branches: [ main ]
+    branches: main
   schedule:
     - cron: '0 0 * * *'
 
@@ -10,9 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Validate Makefile
-      run: make help
-      working-directory: module3_task0
-
+    steps:   # yamllint disable-line
+      - uses: actions/checkout@v2
+      - name: Validate Makefile
+        run: make help
+        working-directory: module3_task0
