@@ -8,8 +8,7 @@ on:
     - cron: '0 0 * * *'
 
   jobs: 
-    build:
-    -uses: actions/checkout@v2
-    - run: git clone git@github.com:rb5014/holbertonschool-validation.git
-    - run: make help
-    working-directory: ./module3_task0
+    -steps:
+      -uses: actions/checkout@v2
+      - run: make help
+      working-directory: ./module3_task0
