@@ -1,0 +1,14 @@
+name: module3_task0
+
+on:
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *'
+
+  jobs: 
+    build:
+    - run: git clone git@github.com:rb5014/holbertonschool-validation.git
+    - run: make help
+    working-directory: ./module3_task0
