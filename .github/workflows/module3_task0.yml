@@ -1,7 +1,7 @@
 ---
 name: module3_task0
 
-on:   # yamllint disable-line rule:truthy
+on:
   push:
     branches: main
   schedule:
@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:   # yamllint disable-line
+    steps:
       - uses: actions/checkout@v2
       - name: Validate Makefile
         run: make help
