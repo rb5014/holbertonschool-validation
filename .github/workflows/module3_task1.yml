@@ -24,4 +24,4 @@ jobs:
           make build
           make clean
           make POST_NAME=who-are-we POST_TITLE="Who are we" post
-        working-directory: module3_task0
+        working-directory: module3_task1
