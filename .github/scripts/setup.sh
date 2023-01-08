@@ -1,5 +1,5 @@
 # Update and install 'hugo' and 'make'
-apt-get update && apt-get install hugo make
+apt-get update && apt-get install hugo
 
 # Install 'curl'
 apt-get install curl -y
