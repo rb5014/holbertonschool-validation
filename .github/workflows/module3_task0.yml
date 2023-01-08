@@ -10,7 +10,6 @@ name: module3_task0
 
 jobs:
   builds:
-    name: job1
     runs-on: ubuntu-latest
 
     steps:
