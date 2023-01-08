@@ -7,8 +7,11 @@ name: module3_task1
   schedule:
     - cron: '0 0 * * *'
 
+permissions: read-all
+
 jobs:
-  build:
+  builds:
+    name: job1
     runs-on: ubuntu-18.04
 
     steps:
