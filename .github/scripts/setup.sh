@@ -1,12 +1,12 @@
 # Update and install 'hugo' and 'make'
-apt-get update && apt-get install hugo
+sudo apt-get update && sudo apt-get install hugo
 
 # Install 'curl'
-apt-get install curl -y
+sudo apt-get install curl -y
 
 # Download latest release of 'hugo'
-curl -Lo install_hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_extended_0.109.0_linux-amd64.deb
+sudo curl -Lo install_hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.109.0/hugo_extended_0.109.0_linux-amd64.deb
 
 # Install the latest version of 'hugo'
-apt-get install ./install_hugo.deb
+sudo apt-get install ./install_hugo.deb
 
