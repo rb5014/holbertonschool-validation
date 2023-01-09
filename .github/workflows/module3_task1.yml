@@ -16,10 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: install hugo
-        run: .github/scripts/setup.sh
-      - name: Validate Makefile help
+      - name: Install hugo and Validate Makefile help
         run: |
+          .github/scripts/setup.sh
           make help
           make build
           make clean
