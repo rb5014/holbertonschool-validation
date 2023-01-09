@@ -16,11 +16,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: install hugo
-        run: ./setup.sh
-        working-directory: module3_task1
       - name: Validate Makefile help
         run: |
+          ./setup.sh
           make help
           make build
           make clean
