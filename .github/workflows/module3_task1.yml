@@ -16,11 +16,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Install hugo and Validate Makefile help
+      - name: install hugo
         run: |
-          ./setup.sh
+          cd module3_task1 && ./setup.sh
+      - name: Validate Makefile help
+        run: |
+          cd module3_task1
           make help
           make build
           make clean
           make POST_NAME=who-are-we POST_TITLE="Who are we" post
-        working-directory: module3_task1
