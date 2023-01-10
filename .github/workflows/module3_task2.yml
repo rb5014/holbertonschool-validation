@@ -17,12 +17,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Install NodeJs
-        run: sudo apt install npm
-        
+      - uses: actions/setup-node
       - name: Install markdownlint from npm
-        run: npm install markdownlint --save-dev
+        run: npm install -g markdownlint-cli
           
       - name: Setup Env and Validate Makefile help
         run: |
