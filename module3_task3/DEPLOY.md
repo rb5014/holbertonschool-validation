@@ -1,4 +1,3 @@
-tag
 # What is in the archive and how to unarchive it?
 
 The archive awesome-website.zip contains the directory dist/
@@ -16,3 +15,4 @@ I don't know
 # How to “quickly” verify that the application is running (healthcheck)?
 
 I don't know
+tag
