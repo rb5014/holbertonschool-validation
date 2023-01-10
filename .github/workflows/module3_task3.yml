@@ -11,9 +11,9 @@ name: module3_task3
     - cron: '0 0 * * *'
 
 permissions: read-all
-
 jobs:
   builds:
+    permissions: write-all
     name: job1
     runs-on: ubuntu-18.04
 
