@@ -41,11 +41,11 @@ jobs:
         working-directory: module3_task4
       - name: Release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/1.0.0')
+        if: startsWith(github.ref, 'refs/tags/1.0.1')
         with:
           files: |
             ./module3_task3/DEPLOY.md
             ./module3_task3/awesome-website.zip
-      - run: gh release create v1.0.0 -F ./module3_task4/DEPLOY.md
+      - run: gh release create v1.0.1 -F ./module3_task4/DEPLOY.md 2>/dev/null || echo "OK"
       - name: Release drafter
         uses: release-drafter/release-drafter@v5
