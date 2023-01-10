@@ -1,4 +1,6 @@
 ---
+env:
+  GH_TOKEN: ${{ github.token }}
 name: module3_task3
 "on":
   push:
