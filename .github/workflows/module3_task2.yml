@@ -28,4 +28,7 @@ jobs:
           make clean
           make POST_NAME=who-are-we POST_TITLE="Who are we" post
           make package
+          make unit-tests
+          make Validate
+          make integration-tests
         working-directory: module3_task2
