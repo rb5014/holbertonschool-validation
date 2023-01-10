@@ -14,8 +14,8 @@ The contents consists in a single blog post which title should be
 All of the website’s source code is stored under a directory named module1_task0
 The command line hugo in version 0.84.0 must be used
 The website is expected to be generated into the directory module1_task0/dist/
-The directory module1_task0/dist/ must not be committed (it should be absent from the
-repository)
+The directory module1_task0/dist/ must not be committed (it should be absent
+from the repository)
 
 ## Lifecycle
 
