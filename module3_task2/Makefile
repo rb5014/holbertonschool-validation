@@ -17,6 +17,7 @@ post: ## Create a new blog post
 
 # Create an archive file containing the dist/ directory
 package: ## Create an archive file containing the dist/ directory
+	hugo
 	zip -r awesome-website.zip dist/
 
 # Lint the README.md and DEPLOY.md files
