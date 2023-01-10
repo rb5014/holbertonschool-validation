@@ -23,8 +23,17 @@ package: ## Create an archive file containing the dist/ directory
 lint: ## Lint the README.md and DEPLOY.md files
 	markdownlint README.md && markdownlint DEPLOY.md
 
-# Unittest the files
-unit-test: ## Unittest the files
+# Unit-tests the files
+unit-tests: ## Unittest the files
 	ls
+
+# Validate the files
+validate: ## Validate the files
+	ls
+
+# Integration-tests the files
+integration-tests: ## Integration-tests the files
+	ls
+
 # Set default target
-.PHONY: build clean post package lint unit-test
+.PHONY: build clean post package lint unit-tests validate integration-tests
