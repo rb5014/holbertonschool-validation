@@ -27,4 +27,7 @@ variables POST_TITLE and POST_NAME.
 "Help": Show the help usage
 "Package": Create an archive file containing the dist/ directory
 "Lint": Lint the README.md and DEPLOY.md files
-Usage: make build, make clean, make post, make help, make package, make lint
+"Unit-tests": Unit-tests the files
+"Validate": Validate the files
+"Integration-tests": Integration-tests the files
+Usage: make build, make clean, make post, make help, make package, make lint, make unit-tests, make validate, make integration-tests
