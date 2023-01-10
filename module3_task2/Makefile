@@ -15,7 +15,7 @@ post: ## Create a new blog post
 	hugo new ./content/posts/$(POST_NAME).md
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/g' ./content/posts/$(POST_NAME).md
 
-# Create an archive file containing the api binary and the dist/ directory
+# Create an archive file containing the dist/ directory
 package: ## Create an archive file containing the dist/ directory
 	zip -r awesome-website.zip dist/
 

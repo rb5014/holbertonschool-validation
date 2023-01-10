@@ -17,5 +17,6 @@ The directory module1_task0/dist/ must not be committed (it should be absent fro
 “Clean”: Cleanup the content of the directory dist/
 “Post”: Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME.
 "Help": Show the help usage
-
-Usage: make build, make clean, make post, make help
+"Package": Create an archive file containing the dist/ directory
+"Lint": Lint the README.md and DEPLOY.md files
+Usage: make build, make clean, make post, make help, make package, make lint
