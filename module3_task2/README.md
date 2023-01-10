@@ -30,4 +30,5 @@ variables POST_TITLE and POST_NAME.
 "Unit-tests": Unit-tests the files
 "Validate": Validate the files
 "Integration-tests": Integration-tests the files
-Usage: make build, make clean, make post, make help, make package, make lint, make unit-tests, make validate, make integration-tests
+Usage: make build, make clean, make post, make help, make package, make lint,
+ make unit-tests, make validate, make integration-tests
