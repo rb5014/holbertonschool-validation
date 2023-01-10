@@ -42,4 +42,4 @@ jobs:
           files: |
             ./module3_task3/DEPLOY.md
             ./module3_task3/awesome-website.zip
-      - run: gh release create v1.0.0 -F ./module3_task3/DEPLOY.md 2>/dev/null || echo "OK"
+      - run: gh release create v1.0.0 -F ./module3_task3/DEPLOY.md
