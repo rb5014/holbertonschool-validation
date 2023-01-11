@@ -11,7 +11,7 @@ name: module3_task4
     - cron: '0 0 * * *'
   pull_request:
     types: [opened, reopened, synchronize]
-    branches: 
+    branches:
       - main
 
 permissions: read-all
@@ -46,6 +46,7 @@ jobs:
           files: |
             ./module3_task3/DEPLOY.md
             ./module3_task3/awesome-website.zip
-      - run: gh release create v1.0.1 -F ./module3_task4/DEPLOY.md 2>/dev/null || echo "OK"
+      - run: gh release create v1.0.1 -F ./module3_task4/DEPLOY.md\
+            2>/dev/null || echo "OK"
       - name: Release drafter
         uses: release-drafter/release-drafter@v5
