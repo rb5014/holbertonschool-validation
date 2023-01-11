@@ -4,7 +4,7 @@ env:
 name: module3_task4
 "on":
   push:
-    tags: [1.0.1]
+    tags: "1.0.1"
     branches:
       - main
   schedule:
