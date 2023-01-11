@@ -11,10 +11,9 @@ name: module3_task4
     - cron: '0 0 * * *'
   pull_request:
     types: [opened, reopened, synchronize]
-    branches:
-      - main
 
 permissions: read-all
+
 jobs:
   builds:
     permissions: write-all
@@ -24,29 +23,35 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      - name: Install markdownlint from npm
+        with:
+          node-version: 16
+      - name: install hugo
+        run: cd module3_task4 && ./setup.sh
+      - name: install markdown
         run: npm install -g markdownlint-cli
-      - name: Setup Env and Validate Makefile help
+      - name: Validate Makefile help
         run: |
+          cd module3_task4
           make lint
-          ./setup.sh
-          make help
           make build
-          make clean
-          make POST_NAME=who-are-we POST_TITLE="Who are we" post
           make package
           make unit-tests
-          make validate
           make integration-tests
-        working-directory: module3_task4
+          make validate
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/1.0.1')
         with:
           files: |
-            ./module3_task3/DEPLOY.md
-            ./module3_task3/awesome-website.zip
-      - run: gh release create v1.0.1 -F ./module3_task4/DEPLOY.md\
+            awesome-website.zip
+            DEPLOY.md
+          body: |
+            # First project
+            What is in the archive and how to unarchive it? zip
+            What are the commands to start and stop the application? tag
+            How to customize where the application logs are written?
+            How to verify that the application is running (healthcheck)?
+      - run: gh release create v1.0.1 --title "v1.0.1" --notes DEPLOY.md\
             2>/dev/null || echo "OK"
-      - name: Release Drafter
+      - name: release drafter
         uses: release-drafter/release-drafter@v5

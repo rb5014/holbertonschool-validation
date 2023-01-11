@@ -1,9 +1,10 @@
----
-name: Release Drafter
+
+# ---
 
 env:
   GH_TOKEN: ${{ github.token }}
 
+name: release_drafter
 "on":
   push:
     tags: "1.0.1"
@@ -14,24 +15,16 @@ env:
     branches:
       - main
 
-
-permissions:
-  contents: read
-
 jobs:
   update_release_draft:
-    permissions:
-      # write permission is required to create a github release
-      contents: write
-      # write permission is required for autolabeler
-      # otherwise, read permission is required at least
-      pull-requests: write
+    permissions: write-all
+    name: release_drafter_job
     runs-on: ubuntu-18.04
+
     steps:
-      # Drafts your next Release notes as Pull Requests are merged into "main"
-      - name: Release Drafter
+      - name: release drafter
         uses: release-drafter/release-drafter@v5
         with:
-          github-token: ${{ github.token }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           labels: "changelog"
           output: changelog.md
