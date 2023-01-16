@@ -25,6 +25,7 @@ from the repository)
 "Run": Run the server
 "Stop": Stop the server
 "Test": Test the server
+"Lint" Lint the main.go
 
-Usage: make build, make clean, make help, make run, make stop, make test
+Usage: make build, make clean, make help, make run, make stop, make test, make lint
 
