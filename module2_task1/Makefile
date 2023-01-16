@@ -13,11 +13,11 @@ run: ## Run the website
 
 # Stop the website
 stop: ## Stop the website
-	kill "$(pgrep awesome-api)"
+	pgrep awesome-api | xargs kill
 
 # Clean up the awesome-api
 clean: ## Clean up the awesome-api
-	kill "$(pgrep awesome-api)"
+	pgrep awesome-api | xargs kill
 	rm -f awesome-api awesome.log
 
 
@@ -28,7 +28,7 @@ test: ## test the files
 
 # lint the main.go
 lint: ## lint the main.go
-	golangci-lint run
+	golangci-lint run && echo "OK"
 
 # Set default target
 .PHONY: build clean run stop test lint
