@@ -4,7 +4,8 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go
-	make lint && go build
+	
+	@golangci-lint run && go build
 
 # Run the website
 run: ## Run the website
@@ -16,7 +17,7 @@ stop: ## Stop the website
 
 # Clean up the awesome-api
 clean: ## Clean up the awesome-api
-	pgrep awesome-api | xargs kill
+	pgrep awesome-api | xargs kill 
 	rm -f awesome-api awesome.log
 
 
@@ -27,7 +28,7 @@ test: ## test the files
 
 # lint the main.go
 lint: ## lint the main.go
-	golangci-lint run && echo "OK"
-
+	@golangci-lint run
+	
 # Set default target
 .PHONY: build clean run stop test lint
