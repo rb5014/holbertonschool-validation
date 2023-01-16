@@ -4,8 +4,7 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go
-	make lint
-	go build
+	make lint && go build
 
 # Run the website
 run: ## Run the website
