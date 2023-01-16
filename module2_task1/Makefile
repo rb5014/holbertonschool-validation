@@ -5,8 +5,8 @@ help: ## Show this help
 # Build the website
 build: ## Build the go
 	
-	@golangci-lint run && echo "OK" || echo "ERROR"
-	@go build && echo "OK" || echo "ERROR"
+	golangci-lint run
+	go build
 # Run the website
 run: ## Run the website
 	./awesome-api >./awesome.log 2>&1 &
@@ -28,7 +28,7 @@ test: ## test the files
 
 # lint the main.go
 lint: ## lint the main.go
-	@golangci-lint run && echo "OK" || echo "ERROR"
+	golangci-lint run
 	
 # Set default target
 .PHONY: build clean run stop test lint
