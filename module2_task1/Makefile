@@ -4,7 +4,7 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go
-	make lint >/dev/null 2>&1 && echo "OK" || echo "ERROR"
+	make lint
 	go build
 
 # Run the website
@@ -13,7 +13,7 @@ run: ## Run the website
 
 # Stop the website
 stop: ## Stop the website
-	pgrep awesome-api | xargs kill
+	kill "$(pgrep awesome-api)"
 
 # Clean up the awesome-api
 clean: ## Clean up the awesome-api
