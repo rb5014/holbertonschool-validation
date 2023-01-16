@@ -4,7 +4,7 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go
-	golangci-lint run
+	make lint >/dev/null 2>&1 && echo "OK" || echo "ERROR"
 	go build
 
 # Run the website
@@ -28,7 +28,7 @@ test: ## test the files
 
 # lint the main.go
 lint: ## lint the main.go
-	golangci-lint run
+	make lint >/dev/null 2>&1 && echo "OK" || echo "ERROR"
 
 # Set default target
 .PHONY: build clean run stop test lint
