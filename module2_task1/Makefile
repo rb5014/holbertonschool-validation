@@ -17,7 +17,7 @@ stop: ## Stop the website
 
 # Clean up the awesome-api
 clean: ## Clean up the awesome-api
-	pgrep awesome-api | xargs kill
+	kill "$(pgrep awesome-api)"
 	rm -f awesome-api awesome.log
 
 
