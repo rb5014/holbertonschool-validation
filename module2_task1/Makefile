@@ -28,7 +28,7 @@ test: ## test the files
 
 # lint the main.go
 lint: ## lint the main.go
-	make lint >/dev/null 2>&1 && echo "OK" || echo "ERROR"
+	golangci-lint run
 
 # Set default target
 .PHONY: build clean run stop test lint
