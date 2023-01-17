@@ -4,7 +4,7 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go
-	lint
+	golangci-lint-run
 	go build
 
 # Run the website
@@ -13,11 +13,11 @@ run: ## Run the website
 
 # Stop the website
 stop: ## Stop the website
-	pgrep awesome-api | xargs kill
+	pkill awesome-api || true
 
 # Clean up the awesome-api
 clean: ## Clean up the awesome-api
-	stop
+	pkill awesome-api || true
 	rm -f awesome-api awesome.log
 
 # tests the files
