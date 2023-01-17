@@ -4,12 +4,12 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go
-	lint
-	go build
+	@lint
+	@go build
 
 # Run the website
 run: ## Run the website
-	./awesome-api >./awesome.log 2>&1 &
+	@./awesome-api >./awesome.log 2>&1 &
 
 # Stop the website
 stop: ## Stop the website
@@ -22,12 +22,12 @@ clean: ## Clean up the awesome-api
 
 # tests the files
 test: ## test the files
-	curl http://localhost:9999
-	curl http://localhost:9999/health
+	@curl http://localhost:9999
+	@curl http://localhost:9999/health
 
 # lint the main.go
 lint: ## lint the main.go
-	golangci-lint run
+	@golangci-lint run
 	
 # Set default target
 .PHONY: build clean run stop test lint
