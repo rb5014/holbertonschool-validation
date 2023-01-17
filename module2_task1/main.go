@@ -37,6 +37,5 @@ func HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
 
   // Write the string "ALIVE" into the response's body
   _, _ = io.WriteString(w, "ALIVE")
-ss
   // End of the function: return HTTP 200 by default
 }
