@@ -8,7 +8,7 @@ lint: ## lint the main.go
 
 # Build the website
 build: ## Build the go
-	@golangci-lint run
+	@make lint
 	@go build
 
 # Run the website
