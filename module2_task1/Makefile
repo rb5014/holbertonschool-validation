@@ -5,7 +5,7 @@ help: ## Show this help
 # lint the main.go
 lint: ## lint the main.go
 	@golangci-lint run
-	@echo "make: *** [lint] Terminated\n -"
+	@echo "make: *** [lint] Terminated"
 # Build the website
 build: ## Build the go
 	@golangci-lint run
