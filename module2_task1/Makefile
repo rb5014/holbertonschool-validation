@@ -2,9 +2,13 @@
 help: ## Show this help
 	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
 
+# lint the main.go
+lint: ## lint the main.go
+	@golangci-lint run
+
 # Build the website
 build: ## Build the go
-	@lint
+	@make lint
 	@go build
 
 # Run the website
@@ -25,9 +29,6 @@ test: ## test the files
 	@curl http://localhost:9999
 	@curl http://localhost:9999/health
 
-# lint the main.go
-lint: ## lint the main.go
-	@golangci-lint run
 	
 # Set default target
 .PHONY: build clean run stop test lint
