@@ -12,11 +12,11 @@ run: ## Run the website
 
 # Stop the website
 stop: ## Stop the website
-	pgrep awesome-api | xargs kill
+	pkill awesome-api
 
 # Clean up the awesome-api
 clean: ## Clean up the awesome-api
-	pgrep awesome-api | xargs kill
+	pkill awesome-api
 	rm -f awesome-api awesome.log
 
 
