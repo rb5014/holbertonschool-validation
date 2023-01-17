@@ -29,7 +29,7 @@ func setupRouter() *mux.Router {
 	r.HandleFunc("/health", HealthCheckHandler).Methods("GET")
 
 	return r
-}
+}sef
 
 func HealthCheckHandler(w http.ResponseWriter, r *http.Request) {
 	// Print a line in the logs
