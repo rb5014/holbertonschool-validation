@@ -18,13 +18,12 @@ func main() {
   fmt.Println("HTTP Server listening on", httpAddr)
 
   // Start an HTTP server using the custom router
-  log.Fatal(http.ListenAndServe(httpAddr, setupRouter()))
+log.Fatal(http.ListenAndServe(httpAddr, setupRouter()))
 }
-
 func setupRouter() *mux.Router {
   // Create a new empty HTTP Router
   r := mux.NewRouter()
-
+  
   // When an HTTP GET request is received on the path /health, delegates to the function "HealthCheckHandler()"
   r.HandleFunc("/health", HealthCheckHandler).Methods("GET")
 
