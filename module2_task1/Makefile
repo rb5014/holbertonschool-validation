@@ -4,7 +4,7 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go
-	@golangci-lint run >/dev/null 2>&1 && go build || exit -1
+	@make lint >/dev/null 2>&1 && go build || exit -1
 
 # Run the website
 run: ## Run the website
