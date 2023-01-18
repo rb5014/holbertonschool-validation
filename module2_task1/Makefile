@@ -4,7 +4,7 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go
-	@make lint >/dev/null 2>&1 && go build || exit -1
+	make lint && go build
 
 # Run the website
 run: ## Run the website
