@@ -16,4 +16,4 @@ post: ## Create a new blog post
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/g' ./content/posts/$(POST_NAME).md
 
 # Set default target
-.PHONY: build clean post
+.PHONY: build clean post help
