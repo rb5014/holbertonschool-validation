@@ -19,7 +19,7 @@ stop: ## Stop the website
 clean: ## Clean up the project
 	pkill awesome-api || true
 	rm -f awesome* coverage*
-	rm -rf dist/*
+	rm -rf dist
 
 # Create a new blog post
 post: ## Create a new blog post
