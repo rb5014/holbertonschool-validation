@@ -47,7 +47,7 @@ func Test_HelloHandler(t *testing.T) {
       body:         "Hello !",
     },
 		{
-			name:         "2 name",
+			name:         "2 names",
 			queryString:  "name=test&name=tests",
 			responseCode: 200,
 			body:         "Hello tests!",
