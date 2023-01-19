@@ -4,7 +4,7 @@ help: ## Show this help
 
 # Build the website in the dist directory
 build: ## Build the website in the dist directory
-	hugo
+	make check && hugo
 
 # Clean up the dist directory
 clean: ## Clean up the dist directory
@@ -17,7 +17,7 @@ post: ## Create a new blog post
 
 # Check
 check: ## Check
-	markdownlint ./content/posts/* && markdown-link-check ./content/posts/* && make build
+	markdownlint ./content/posts/* && markdown-link-check ./content/posts/*
 
 # Validate
 validate: ## Validate
