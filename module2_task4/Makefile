@@ -17,10 +17,11 @@ post: ## Create a new blog post
 
 # Check
 check: ## Check
-	markdownlint ./content/posts/* && markdown-link-check ./content/posts/*
+	markdownlint ./content/posts/* && markdown-link-check ./content/posts/* && make build
 
 # Validate
 validate: ## Validate
+	make build
 	./W3C-Validator/w3c_validator.py ./dist/index.html || true
 
 # Set default target

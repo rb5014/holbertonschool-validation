@@ -8,6 +8,7 @@ build: ## Build the go and the dist
 
 # Run the website
 run: ## Run the website
+	make build
 	./awesome-api >./awesome.log 2>&1 &
 
 # Stop the website
