@@ -27,6 +27,7 @@ from the repository)
 "Test": Test the server
 "Lint" Lint the main.go
 "Unit-tests": Unit-tests the main.go
+"Integration-tests": Integration-tests the main.go
 
-Usage: make build, make clean, make help, make run, make stop, make test, make lint, make unit-tests
+Usage: make build, make clean, make help, make run, make stop, make test, make lint, make unit-tests, make integration-tests
 
