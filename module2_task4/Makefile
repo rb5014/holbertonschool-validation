@@ -4,7 +4,7 @@ help: ## Show this help
 
 # Build the website in the dist directory
 build: ## Build the website in the dist directory
-	make check && hugo
+	make check >/dev/null 2>&1 && hugo
 
 # Clean up the dist directory
 clean: ## Clean up the dist directory
