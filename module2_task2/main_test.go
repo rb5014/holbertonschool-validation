@@ -33,14 +33,12 @@ func Test_HelloHandler(t *testing.T) {
     {
       name:         "Name solo, without any walue",
       queryString:  "name",
-      responseCode: 200,
-      body:         "Hello there!",
+      responseCode: 400,
     },
     {
       name:         "Name with an empty value",
       queryString:  "name=",
-      responseCode: 200,
-      body:         "Hello there!",
+      responseCode: 400,
     },
     {
       name:         "Another query parameter",
