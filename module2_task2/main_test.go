@@ -44,7 +44,7 @@ func Test_HelloHandler(t *testing.T) {
       name:         "Another query parameter",
       queryString:  "randomquery=rand_query!",
       responseCode: 200,
-      body:         "Hello there!",
+      body:         "Hello !",
     },
 		{
 			name:         "2 name",
