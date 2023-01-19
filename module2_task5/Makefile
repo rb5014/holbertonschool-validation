@@ -5,7 +5,7 @@ help: ## Show this help
 # Build the website
 build: ## Build the go and the dist
 	make lint && go build
-	hugo
+	make check && hugo
 
 # Run the website
 run: ## Run the website

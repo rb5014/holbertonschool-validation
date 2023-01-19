@@ -17,8 +17,11 @@ post: ## Create a new blog post
 
 # Check
 check: ## Check
-	markdownlint ./content/posts/*
-	markdown-link-check ./content/posts/*
+	if [ "$(shell ls -A ./content/posts)" ]; then\
+	 	markdownlint ./content/posts/* && markdown-link-check ./content/posts/*;\
+	else\
+		true;\
+	fi
 
 # Validate
 validate: ## Validate
