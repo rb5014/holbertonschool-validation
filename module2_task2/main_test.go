@@ -30,24 +30,28 @@ func Test_HelloHandler(t *testing.T) {
       responseCode: 200,
       body:         "Hello Rosalind Franklin!",
     },
-    {
-      name:         "Name solo, without any walue",
-      queryString:  "name",
-      responseCode: 200,
-      body:         "Hello there!",
-    },
-    {
-      name:         "Name with an empty value",
-      queryString:  "name=",
-      responseCode: 200,
-      body:         "Hello there!",
-    },
-    {
-      name:         "Another query parameter",
-      queryString:  "randomquery=rand_query",
-      responseCode: 200,
-      body:         "Hello there!",
-    },
+		{
+			name:         "Name without value",
+			queryString:  "name",
+			responseCode: 400,
+		},
+		{
+			name:         "Name Empty",
+			queryString:  "name=",
+			responseCode: 400,
+		},
+		{
+			name:         "Another queryString halo",
+			queryString:  "halo=Haloooo!",
+			responseCode: 200,
+			body:         "Hello !",
+		},
+		{
+			name:         "Without any param",
+			queryString:  "name=test&name=lol",
+			responseCode: 200,
+			body:         "Hello lol!",
+		},
   }
   for _, tt := range tests {
     t.Run(tt.name, func(t *testing.T) {

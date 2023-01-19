@@ -30,7 +30,7 @@ lint: ## lint the main.go
 	
 # unit-tests the main.go
 unit-tests: ## unit-tests the main.go
-	go test -v -short -coverprofile=coverage-units.out
+	@go test -v -short -coverprofile=coverage-units.out
 
 # Set default target
 .PHONY: build clean run stop test lint unit-tests
