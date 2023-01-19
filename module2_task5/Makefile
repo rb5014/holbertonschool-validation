@@ -4,7 +4,8 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go and the dist
-	make lint && go build && hugo
+	make lint && go build
+	hugo
 
 # Run the website
 run: ## Run the website
@@ -28,7 +29,8 @@ post: ## Create a new blog post
 
 # Check the markdown files
 check: ## Check the markdown files
-	markdownlint ./content/posts/* && markdown-link-check ./content/posts/*
+	markdownlint ./content/posts/*
+	markdown-link-check ./content/posts/*
 
 # Validate the website
 validate: ## Validate the website
@@ -36,7 +38,8 @@ validate: ## Validate the website
 
 # tests the files
 test: ## test the files
-	make unit-tests && make integration-tests
+	make unit-tests
+	make integration-tests
 
 # lint the main.go
 lint: ## lint the main.go
