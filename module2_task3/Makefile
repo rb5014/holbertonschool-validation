@@ -17,7 +17,7 @@ stop: ## Stop the website
 # Clean up the awesome-api
 clean: ## Clean up the awesome-api
 	pkill awesome-api || true
-	rm -f awesome-api awesome.log
+	rm -f awesome* coverage*
 
 # tests the files
 test: ## test the files

@@ -31,10 +31,10 @@ func Test_server(t *testing.T) {
       body:         "Hello Holberton!",
     },
     {
-      name:         "Grace Hopper",
-      URI:          "/hello?name=Grace%20Hopper",
-      responseCode: 200,
-      body:         "Hello Grace Hopper!",
+      name:         "Grace Hopper Invalid request because of space",
+      URI:          "/hello?name=Grace Hopper",
+      responseCode: 400,
+      body:         "400 Bad Request",
 	  },
 	  {
       name:         "Rosalind Franklin",
