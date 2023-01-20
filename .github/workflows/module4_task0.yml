@@ -38,8 +38,11 @@ jobs:
 
       - name: Install git and W3C-Validator
         run: |
-          apt install git
+          apt install git -y
           git clone https://github.com/holbertonschool/W3C-Validator.git
+
+      - name: Install zip
+        run: apt install zip -y
 
       - name: install hugo
         run: |
