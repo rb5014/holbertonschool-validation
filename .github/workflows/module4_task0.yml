@@ -33,7 +33,7 @@ jobs:
         run: npm install -g markdown-link-check
 
       - name: Install git and W3C-Validator
-        run: | 
+        run: |
           apt install git
           cd module4_task0
           git clone https://github.com/holbertonschool/W3C-Validator.git
