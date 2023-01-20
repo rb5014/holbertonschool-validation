@@ -22,7 +22,8 @@ package: ## Create an archive file containing the dist/ directory
 
 # Lint the README.md and DEPLOY.md files
 lint: ## Lint the README.md and DEPLOY.md files
-	markdownlint README.md && markdownlint DEPLOY.md
+	markdownlint README.md
+	markdownlint DEPLOY.md
 
 # Unit-tests the files
 unit-tests: ## Unittest the files
