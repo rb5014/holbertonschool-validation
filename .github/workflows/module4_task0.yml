@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 16
       - name: install hugo
-        run: cd module3_task5 && ./setup.sh
+        run: cd module4_task0 && ./setup.sh
       - name: install markdown
         run: npm install -g markdownlint-cli
       - name: Validate Makefile help
