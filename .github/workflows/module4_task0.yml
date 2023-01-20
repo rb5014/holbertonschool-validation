@@ -26,13 +26,20 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: install markdownlint
+        run: npm install -g markdownlint-cli
+
+      - name: install markdown-link-checker
+        run: npm i markdown-link-check
+
       - name: install hugo
         run: cd module4_task0 && ./setup.sh
-      - name: install markdown
-        run: npm install -g markdownlint-cli
-      - name: Validate Makefile help
+
+      - name: install W3c-Validator
+        run: git clone https://github.com/holbertonschool/W3C-Validator.git
+
+      - name: Validate Makefile
         run: |
-          cd module3_task5
           make lint
           make build
           make package

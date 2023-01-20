@@ -17,12 +17,6 @@ rm ./install_hugo.deb
 # Install golangci-lint
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
 
-# Install markdown lint
-npm install -g markdownlint-cli
-
-# Install markdown-link-check
-npm i markdown-link-check
-
 # Install W3C-Validator
 git clone https://github.com/holbertonschool/W3C-Validator.git
 

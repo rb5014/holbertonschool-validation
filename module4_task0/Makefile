@@ -18,7 +18,7 @@ stop: ## Stop the website
 
 # Clean up the project
 clean: ## Clean up the project
-	pkill awesome-api || true
+	make stop
 	rm -f awesome* coverage*
 	rm -rf dist
 

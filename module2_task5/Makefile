@@ -5,7 +5,7 @@ help: ## Show this help
 # Build the website
 build: ## Build the go and the dist
 	make lint && go build
-	make check && hugo
+	make check && make validate && hugo
 
 # Run the website
 run: ## Run the website
@@ -18,7 +18,7 @@ stop: ## Stop the website
 
 # Clean up the project
 clean: ## Clean up the project
-	pkill awesome-api || true
+	make stop
 	rm -f awesome* coverage*
 	rm -rf dist
 
