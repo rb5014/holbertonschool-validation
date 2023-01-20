@@ -28,9 +28,11 @@ from the repository)
 "Lint" Lint the main.go
 "Unit-tests": Unit-tests the main.go
 "Integration-tests": Integration-tests the main.go
-“Post”: Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME.
+“Post”: Create a new blog post whose filename and title come from the
+ environment variables POST_TITLE and POST_NAME.
 "Check": Check for dead links
 "Validate": Validate the website using w3c validator
 
-Usage: make build, make clean, make help, make run, make stop, make test, make lint, make unit-tests, make integration-tests, make post, make check, make validate
-
+Usage: make build, make clean, make help, make run, make stop,
+ make test, make lint, make unit-tests, make integration-tests,
+  make post, make check, make validate
