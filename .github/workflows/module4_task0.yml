@@ -39,7 +39,9 @@ jobs:
           git clone https://github.com/holbertonschool/W3C-Validator.git
 
       - name: install hugo
-        run: cd module4_task0 && ./setup.sh
+        run: |
+          npm install -g markdownlint-cli
+          cd module4_task0 && ./setup.sh
 
       - name: Validate Makefile
         run:

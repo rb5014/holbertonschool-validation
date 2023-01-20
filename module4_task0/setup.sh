@@ -1,5 +1,5 @@
 # Update and install 'hugo' and 'make'
-apt-get update && apt-get install hugo make npm
+apt-get update && apt-get install hugo make
 
 # Install 'curl'
 apt-get install curl -y
@@ -16,10 +16,6 @@ rm ./install_hugo.deb
 
 # Install golangci-lint
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
-
-# Install markdown-lint
-apt-get install nodejs npm
-npm install -g markdownlint-cli
 
 # Build website
 make build
