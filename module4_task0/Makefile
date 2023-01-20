@@ -20,7 +20,7 @@ stop: ## Stop the website
 clean: ## Clean up the project
 	make stop
 	rm -f awesome* coverage*
-	rm -rf dist
+	rm -rf dist/*
 
 # Create a new blog post
 post: ## Create a new blog post
