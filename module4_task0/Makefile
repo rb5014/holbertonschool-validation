@@ -46,10 +46,11 @@ package: ## Create an archive file containing the dist/ directory
 	hugo
 	zip -r awesome-website.zip dist/
 
-
 # lint the main.go
 lint: ## lint the main.go
 	golangci-lint run
+	markdownlint README.md
+	markdownlint DEPLOY.md
 	
 # unit-tests the main.go
 unit-tests: ## unit-tests the main.go
