@@ -17,5 +17,8 @@ rm ./install_hugo.deb
 # Install golangci-lint
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.50.1
 
+# Install markdown-lint
+npm install -g markdownlint-cli
+
 # Build website
 make build
