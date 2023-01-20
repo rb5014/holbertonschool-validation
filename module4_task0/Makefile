@@ -28,7 +28,7 @@ post: ## Create a new blog post
 	sed -i 's/title: .*/title: "$(POST_TITLE)"/g' ./content/posts/$(POST_NAME).md
 
 # Check the markdown files
-check: ## Check the markdown files
+check: ## Check the markdown files 
 	markdownlint ./content/posts/*
 	markdown-link-check ./content/posts/*
 
