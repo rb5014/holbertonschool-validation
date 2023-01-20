@@ -32,9 +32,11 @@ jobs:
       - name: install markdown-link-check
         run: npm install -g markdown-link-check
 
-      - name: Install W3C-Validator
-        run: cd module4_task0 &&\
-         git clone https://github.com/holbertonschool/W3C-Validator.git
+      - name: Install git and W3C-Validator
+        run: | 
+          apt install git
+          cd module4_task0
+          git clone https://github.com/holbertonschool/W3C-Validator.git
 
       - name: install hugo
         run: cd module4_task0 && ./setup.sh
