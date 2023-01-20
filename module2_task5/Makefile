@@ -41,6 +41,11 @@ test: ## test the files
 	make unit-tests
 	make integration-tests
 
+# Create an archive file containing the dist/ directory
+package: ## Create an archive file containing the dist/ directory
+	hugo
+	zip -r awesome-website.zip dist/
+
 # lint the main.go
 lint: ## lint the main.go
 	golangci-lint run
@@ -53,4 +58,4 @@ unit-tests: ## unit-tests the main.go
 integration-tests: ## integration-tests
 	go test -v -coverprofile=coverage-integrations.out
 # Set default target
-.PHONY: build clean run stop test lint unit-tests integration-tests check validate
+.PHONY: build clean run stop test lint unit-tests integration-tests check validate package
