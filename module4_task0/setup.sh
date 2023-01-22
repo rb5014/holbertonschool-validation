@@ -1,3 +1,6 @@
+rm -rf /usr/local/go
+rm /etc/paths.d/go
+
 # Update and install 'hugo' and 'make'
 apt-get update && apt-get install -y hugo make
 

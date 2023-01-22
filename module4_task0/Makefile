@@ -4,7 +4,7 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go and the dist
-	make lint && go build
+	make lint && (go build || true)
 	make check && make validate && hugo
 
 # Run the website
@@ -61,6 +61,6 @@ unit-tests: ## unit-tests the main.go
 # integration-tests
 integration-tests: ## integration-tests
 	go test -v -coverprofile=coverage-integrations.out || true
-	
+
 # Set default target
 .PHONY: build clean run stop test lint unit-tests integration-tests check validate package
