@@ -6,7 +6,7 @@ help: ## Show this help
 build: ## Build the go and the dist
 	make lint && go build || touch awesome-api
 	make check && make validate && hugo 
-
+	echo OK
 # Run the website
 run: ## Run the website
 	make build
@@ -58,10 +58,11 @@ lint: ## lint the main.go
 # unit-tests the main.go
 unit-tests: ## unit-tests the main.go
 	go test -v -short -coverprofile=coverage-units.out || touch coverage-units.out
+	echo OK
 
 # integration-tests
 integration-tests: ## integration-tests
 	go test -v -coverprofile=coverage-integrations.out || touch coverage-integrations.out
-
+	echo OK
 # Set default target
 .PHONY: build clean run stop test lint unit-tests integration-tests check validate package
