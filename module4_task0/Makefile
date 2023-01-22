@@ -34,6 +34,7 @@ check: ## Check the markdown files
 
 # Validate the website
 validate: ## Validate the website
+	apt-get install git -y && git clone https://github.com/holbertonschool/W3C-Validator.git || true
 	./W3C-Validator/w3c_validator.py ./dist/index.html 
 
 # tests the files
