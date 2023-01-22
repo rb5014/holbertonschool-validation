@@ -4,8 +4,8 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go and the dist
-	make lint && go build
-	make check && make validate && hugo
+	golangci-lint run && markdownlint README.md && markdownlint DEPLOY.md && go build
+	markdownlint ./content/posts/* && markdown-link-check ./content/posts/* && make validate && hugo
 
 # Run the website
 run: ## Run the website
