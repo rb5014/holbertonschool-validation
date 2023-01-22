@@ -4,8 +4,8 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go and the dist
-	golangci-lint run && markdownlint README.md && markdownlint DEPLOY.md && go build
-	markdownlint ./content/posts/* && markdown-link-check ./content/posts/* && make validate && hugo
+	make lint && go build
+	make check && make validate && hugo
 
 # Run the website
 run: ## Run the website
@@ -48,6 +48,7 @@ package: ## Create an archive file containing the dist/ directory
 
 # lint the main.go
 lint: ## lint the main.go
+	npm install -g markdownlint
 	golangci-lint run
 	markdownlint README.md
 	markdownlint DEPLOY.md
