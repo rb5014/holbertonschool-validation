@@ -31,8 +31,8 @@ jobs:
         with:
           node-version: 16
 
-      - name: markdownlint-cli
-        uses: nosborn/github-action-markdown-cli@v3.2.0
+      - name: install markdownlint
+        run: npm install -g markdownlint-cli
 
       - name: install markdown-link-check
         run: npm install -g markdown-link-check
@@ -44,11 +44,11 @@ jobs:
 
       - name: install hugo
         run: |
-          npm install -g markdownlint-cli
           ./setup.sh
 
       - name: Validate Makefile
         run: |
+          make build 
           make lint
           make build
           make package

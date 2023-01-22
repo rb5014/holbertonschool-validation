@@ -23,6 +23,3 @@ apt install zip -y
 # Install git and w3c-validator
 apt install git -y
 git clone https://github.com/holbertonschool/W3C-Validator.git
-
-# Build website
-make build
