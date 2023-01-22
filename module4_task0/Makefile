@@ -5,7 +5,7 @@ help: ## Show this help
 # Build the website
 build: ## Build the go and the dist
 	make lint && go build >/dev/null 2>&1 && echo OK
-	make check && make validate && hugo
+	make check && make validate && hugo >/dev/null 2>&1 && echo OK
 
 # Run the website
 run: ## Run the website
@@ -34,7 +34,7 @@ check: ## Check the markdown files
 
 # Validate the website
 validate: ## Validate the website
-	./W3C-Validator/w3c_validator.py ./dist/index.html || true
+	./W3C-Validator/w3c_validator.py ./dist/index.html >/dev/null 2>&1 && echo OK
 
 # tests the files
 test: ## test the files
@@ -50,9 +50,9 @@ package: ## Create an archive file containing the dist/ directory
 lint: ## lint the main.go
 	apt-get install npm -y
 	npm install -g markdownlint
-	golangci-lint run
-	markdownlint README.md
-	markdownlint DEPLOY.md
+	golangci-lint run >/dev/null 2>&1 && echo OK
+	markdownlint README.md >/dev/null 2>&1 && echo OK
+	markdownlint DEPLOY.md >/dev/null 2>&1 && echo OK
 	
 # unit-tests the main.go
 unit-tests: ## unit-tests the main.go
