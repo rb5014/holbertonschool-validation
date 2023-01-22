@@ -48,6 +48,7 @@ package: ## Create an archive file containing the dist/ directory
 
 # lint the main.go
 lint: ## lint the main.go
+	sudo apt-get install npm -y
 	npm install -g markdownlint
 	golangci-lint run
 	markdownlint README.md
