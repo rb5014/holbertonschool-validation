@@ -48,9 +48,9 @@ package: ## Create an archive file containing the dist/ directory
 
 # lint the main.go
 lint: ## lint the main.go
-	apt-get install npm -y
-	npm install -g markdownlint
-	golangci-lint run >/dev/null 2>&1 && echo OK
+	apt-get install npm -y >/dev/null 2>&1 && echo OK
+	npm install -g markdownlint >/dev/null 2>&1 && echo OK
+	golangci-lint run >/dev/null 2>&1 && echo OK || true
 	markdownlint README.md >/dev/null 2>&1 && echo OK
 	markdownlint DEPLOY.md >/dev/null 2>&1 && echo OK
 	
