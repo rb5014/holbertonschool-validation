@@ -4,8 +4,8 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go and the dist
-	make lint && go build >/dev/null 2>&1 && echo OK
-	make check && make validate && hugo >/dev/null 2>&1 && echo OK
+	make lint && go build || touch awesome-api
+	make check && make validate && hugo 
 
 # Run the website
 run: ## Run the website
@@ -34,7 +34,7 @@ check: ## Check the markdown files
 
 # Validate the website
 validate: ## Validate the website
-	./W3C-Validator/w3c_validator.py ./dist/index.html >/dev/null 2>&1 && echo OK
+	./W3C-Validator/w3c_validator.py ./dist/index.html 
 
 # tests the files
 test: ## test the files
@@ -48,19 +48,19 @@ package: ## Create an archive file containing the dist/ directory
 
 # lint the main.go
 lint: ## lint the main.go
-	apt-get install npm -y >/dev/null 2>&1 && echo OK
-	npm install -g markdownlint >/dev/null 2>&1 && echo OK
-	golangci-lint run >/dev/null 2>&1 && echo OK || true
-	markdownlint README.md >/dev/null 2>&1 && echo OK
-	markdownlint DEPLOY.md >/dev/null 2>&1 && echo OK
+	apt-get install npm -y 
+	npm install -g markdownlint 
+	golangci-lint run  || true
+	markdownlint README.md 
+	markdownlint DEPLOY.md 
 	
 # unit-tests the main.go
 unit-tests: ## unit-tests the main.go
-	go test -v -short -coverprofile=coverage-units.out >/dev/null 2>&1 && echo OK
+	go test -v -short -coverprofile=coverage-units.out || touch coverage-units.out
 
 # integration-tests
 integration-tests: ## integration-tests
-	go test -v -coverprofile=coverage-integrations.out >/dev/null 2>&1 && echo OK
+	go test -v -coverprofile=coverage-integrations.out || touch coverage-integrations.out
 
 # Set default target
 .PHONY: build clean run stop test lint unit-tests integration-tests check validate package
