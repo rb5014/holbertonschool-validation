@@ -4,7 +4,7 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go and the dist
-	make lint && (go build || true)
+	make lint && go build >/dev/null 2>&1 && echo OK
 	make check && make validate && hugo
 
 # Run the website
@@ -56,11 +56,11 @@ lint: ## lint the main.go
 	
 # unit-tests the main.go
 unit-tests: ## unit-tests the main.go
-	go test -v -short -coverprofile=coverage-units.out || true
+	go test -v -short -coverprofile=coverage-units.out >/dev/null 2>&1 && echo OK
 
 # integration-tests
 integration-tests: ## integration-tests
-	go test -v -coverprofile=coverage-integrations.out || true
+	go test -v -coverprofile=coverage-integrations.out >/dev/null 2>&1 && echo OK
 
 # Set default target
 .PHONY: build clean run stop test lint unit-tests integration-tests check validate package
