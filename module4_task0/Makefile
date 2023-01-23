@@ -4,9 +4,9 @@ help: ## Show this help
 
 # Build the website
 build: ## Build the go and the dist
-	@make lint && go build >/dev/null 2>&1 || touch awesome-api
-	@make check && make validate && hugo >/dev/null 2>&1 || true
-	@echo OK
+	make lint && go build || touch awesome-api
+	make check && make validate && hugo 
+
 # Run the website
 run: ## Run the website
 	make build
@@ -34,13 +34,13 @@ check: ## Check the markdown files
 
 # Validate the website
 validate: ## Validate the website
-	apt-get install git -y && git clone https://github.com/holbertonschool/W3C-Validator.git >/dev/null 2>&1 || true
+	apt-get install git -y && git clone https://github.com/holbertonschool/W3C-Validator.git >/dev/null 2>&1|| true
 	./W3C-Validator/w3c_validator.py ./dist/index.html >/dev/null 2>&1 || true
 
 # tests the files
 test: ## test the files
-	@make unit-tests
-	@make integration-tests
+	make unit-tests
+	make integration-tests
 
 # Create an archive file containing the dist/ directory
 package: ## Create an archive file containing the dist/ directory
@@ -49,20 +49,19 @@ package: ## Create an archive file containing the dist/ directory
 
 # lint the main.go
 lint: ## lint the main.go
-	@apt-get install npm -y >/dev/null 2>&1 || true
-	@npm install -g markdownlint >/dev/null 2>&1 || true
-	@golangci-lint run >/dev/null 2>&1 || true
-	@markdownlint README.md >/dev/null 2>&1 || true
-	@markdownlint DEPLOY.md >/dev/null 2>&1 || true
-	@echo OK
+	apt-get install npm -y 
+	npm install -g markdownlint 
+	golangci-lint run  || true
+	markdownlint README.md 
+	markdownlint DEPLOY.md 
+	
 # unit-tests the main.go
 unit-tests: ## unit-tests the main.go
-	@go test -v -short -coverprofile=coverage-units.out >/dev/null 2>&1 || touch coverage-units.out
-	@echo OK
+	go test -v -short -coverprofile=coverage-units.out || touch coverage-units.out
 
 # integration-tests
 integration-tests: ## integration-tests
-	@go test -v -coverprofile=coverage-integrations.out >/dev/null 2>&1 || touch coverage-integrations.out
-	@echo OK
+	go test -v -coverprofile=coverage-integrations.out || touch coverage-integrations.out
+
 # Set default target
 .PHONY: build clean run stop test lint unit-tests integration-tests check validate package
